@@ -4,12 +4,11 @@ namespace HomeWork4
 {
     internal class Person
     {
-        static string name;
-        static int birthdayYear;
+        string name;
+        int birthdayYear;
         int age;
-        public string Name { get; set; }
-        public int BirthdayYear { get; set; }
-
+        public string Name { get { return name; } set { name = value; } }
+        public int BirthdayYear { get { return birthdayYear; }  set { birthdayYear = value; } }
         public Person()
         {
             name = "";
@@ -17,16 +16,16 @@ namespace HomeWork4
         }
         public Person(string name, int birthdayYear)
         {
-            Person.name = name;
-            Person.birthdayYear = birthdayYear;
+            this.name = name;
+            this.birthdayYear = birthdayYear;
         }
-        public static Person Input(int i)
+        public static Person Input()
         {
-            Person person = new Person();
             Console.Write("Input person name:\t");
-            name = Console.ReadLine();
+            string _name = Console.ReadLine();
             Console.Write("Input person birthday year:\t");
-            birthdayYear = int.Parse(Console.ReadLine());
+            int _birthdayYear = int.Parse(Console.ReadLine());
+            Person person = new Person( _name, _birthdayYear);
             return person;
         }
         public int Age(int birthdayYear)
@@ -36,7 +35,26 @@ namespace HomeWork4
         }
         public void Output()
         {
-            Console.WriteLine($"Info about person: name is {name}, age is {age}");
+            Console.WriteLine($"Info about person: name is {name}, age is {birthdayYear}");
+        }
+        public void ChangeName()
+        {
+            if (name == "Tim")
+            {
+                name = "Tom";
+            }
+        }
+        public override string ToString()
+        {
+            return $"Personal account: name is {name}, age is {age}";
+        }
+        public static bool operator ==( Person first, Person second)
+        {
+            return first.name == second.name;
+        }
+        public static bool operator !=(Person first, Person second)
+        {
+            return !(first.name == second.name);
         }
     }
 }
