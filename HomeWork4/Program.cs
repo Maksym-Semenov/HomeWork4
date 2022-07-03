@@ -7,7 +7,7 @@ namespace HomeWork4
         static void Main(string[] args)
         {
             //Input info about persons
-            Console.Write("Input number of person:\t");
+            Console.Write("Input number of persons:\t");
             int number = int.Parse(Console.ReadLine());
             var person = new Person[number];
             for (int i = 0; i < person.Length; i++)
@@ -21,7 +21,7 @@ namespace HomeWork4
             }
             Console.WriteLine();
             //Change name person, if his name is Tim
-            Console.WriteLine("Type Enter, if you need change name Tim for Tom");
+            Console.WriteLine("Type Enter, if you need to change name Tim for Tom");
             Console.ReadKey();
             for (int i = 0; i < person.Length; i++)
             {
@@ -35,7 +35,7 @@ namespace HomeWork4
             Console.WriteLine();
 
             //Find person, who's age < 16
-            Console.Write("Input age for find very young person:\t");
+            Console.Write("Input value of age for find very young persons:\t");
             Console.WriteLine();
             int age = int.Parse(Console.ReadLine());
             for (int i = 0; i < person.Length; i++)
@@ -46,14 +46,14 @@ namespace HomeWork4
                     Console.WriteLine(person[i]);
                 }
             }
-            //Output info about all persons
             for (int i = 0; i < person.Length; i++)
             {
                 person[i].ToString();
             }
             Console.WriteLine();
+
             //Persons with same name
-            Console.WriteLine("If you can find persons with same name? type Enter");
+            Console.WriteLine("If you can find persons with the same names, type Enter");
             Console.WriteLine();
             Console.ReadKey();
             for (int i = 0; i < person.Length - 1; i++)
